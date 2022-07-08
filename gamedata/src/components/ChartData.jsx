@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Chart } from "react-google-charts";
 
 
@@ -47,9 +47,14 @@ const ChartData = ({allData}) => {
       return data;
     }
    
-   
-   
-   
+    const options = {
+    animation: {
+        startup: true,
+      easing: "linear",
+      duration: 5000,
+    },
+    enableInteractivity: true,
+};
    
    
    
@@ -57,7 +62,7 @@ const ChartData = ({allData}) => {
     return ( 
         <div>
             <h1>Platform By Global Sales In Millions </h1>
-        <Chart chartType="ColumnChart" width="100%" height="400px" data={getDataChart()} />
+        <Chart chartType="ColumnChart" width="100%" height="400px" options={options} data={getDataChart()} />
       </div>
      );
 }
