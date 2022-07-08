@@ -26,9 +26,13 @@ const ChartData = ({allData}) => {
         // ["Platinum", 21.45, "silver"], // CSS-style declaration
 
      let platformArray =uniquePlatforms.map(platform=> {
-        let allPlatformGames= uniquePlatforms.filter(game=> game.platform==platform)
-       
-        return [platform, 10,"silver"]
+        let allPlatformGames= filteredYear.filter(game=> game.platform==platform);
+      console.log(`allPlatformGames for ${platform}:`, allPlatformGames) 
+
+        //sum together globalSales of all items in allPlatformGames
+        const platformGlobalSales = allPlatformGames.reduce((acc, item)=> acc +item.globalsales,0);
+ 
+        return [platform, platformGlobalSales,"Luminous bright orange"]
      })
     console.log('platform Array: ', platformArray)
 
@@ -52,6 +56,7 @@ const ChartData = ({allData}) => {
    
     return ( 
         <div>
+            <h1>Platform By Global Sales In Millions </h1>
         <Chart chartType="ColumnChart" width="100%" height="400px" data={getDataChart()} />
       </div>
      );
