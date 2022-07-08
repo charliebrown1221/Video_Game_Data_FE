@@ -12,15 +12,34 @@ const ChartData = ({allData}) => {
    console.log('filtered year: ', filteredYear)
 
 
-    function getDataChart(){
-         const data = [
-        ["Platform", "Sales", { role: "style" }],
-        ["PS3", 8.94, "silver"], // RGB value
-        ["Silver", 10.49, "silver"], // English color name
-        ["Gold", 19.3, "silver"],
-        ["Platinum", 21.45, "silver"], // CSS-style declaration
-      ];
+   let  platforms = filteredYear.map(game => game.platform)
+   console.log('filtered platforms: ', platforms)
 
+   let uniquePlatforms =[...new Set(platforms)]
+   console.log('Unique Platforms: ', uniquePlatforms)
+
+
+
+        // ["PS3", 8.94, "silver"], // RGB value
+        // ["Silver", 10.49, "silver"], // English color name
+        // ["Gold", 19.3, "silver"],
+        // ["Platinum", 21.45, "silver"], // CSS-style declaration
+
+     let platformArray =uniquePlatforms.map(platform=> {
+        let allPlatformGames= uniquePlatforms.filter(game=> game.platform==platform)
+       
+        return [platform, 10,"silver"]
+     })
+    console.log('platform Array: ', platformArray)
+
+
+     
+     function getDataChart(){
+       const data = [
+        ["Platform", "Sales", { role: "style" }],
+        ...platformArray
+      ];
+      console.log('getDataChart: ', data)
       return data;
     }
    
