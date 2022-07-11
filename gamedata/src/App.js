@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
     <div>
-      <SearchBar />
+      <SearchBar setAllData={setAllData} allData={allData}/>
     </div>
     <div><ChartData allData={allData}/>
     </div>
