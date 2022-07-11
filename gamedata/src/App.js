@@ -57,7 +57,14 @@ function App() {
     <div>
       <SearchBar FilterSearch={FilterSearch}setSearch={setSearch} searchData={searchData}/>
     </div>
-    
+    {searchData.map((el)=>{
+      return<> 
+      <div>Name: {el.name}  </div>
+      <div>Platform: {el.platform}</div>
+      <div>Year: {el.year}</div>
+      <div>Genre: {el.genre}</div>
+      </>
+    })}
     </div>
   );
 }
