@@ -9,8 +9,25 @@ import ChartData from './components/ChartData'
 function App() {
 
   const [allData, setAllData]=useState([]);
+  const [searchData, setSearch]=useState([]);
 
-
+  const FilterSearch = (searchData) =>  {
+    console.log(searchData)
+    let  results = allData.filter((item)  => {
+        if (item.name.includes(searchData)||item.platform.includes(searchData)||item.year ===searchData ||item.genre.includes(searchData) ) 
+        {
+            return true;
+          } 
+            else {
+                return false
+            }
+    
+    }
+    )
+    console.log("results",results)
+    setSearch(results) 
+       
+}
 
   useEffect(()=>{
     getAllData();
@@ -32,12 +49,15 @@ function App() {
 
 
   return (
+    
     <div>
     <div>
-      <SearchBar setAllData={setAllData} allData={allData}/>
+      <ChartData allData={allData}/>
     </div>
-    <div><ChartData allData={allData}/>
+    <div>
+      <SearchBar FilterSearch={FilterSearch}setSearch={setSearch} searchData={searchData}/>
     </div>
+    
     </div>
   );
 }
