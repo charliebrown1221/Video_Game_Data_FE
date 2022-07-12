@@ -1,8 +1,9 @@
 import React,{useState,useEffect} from 'react';
+import './App.css'
 import axios from 'axios';
 import SearchBar from './components/SearchBar'
 import ChartData from './components/ChartData'
-
+import MyChartData from './components/MyChartData'
 
 
 
@@ -21,14 +22,11 @@ function App() {
             else {
                 return false
             }
-    
     }
     )
     console.log("results",results)
     setSearch(results) 
-       
 }
-
   useEffect(()=>{
     getAllData();
   },[])
@@ -44,16 +42,13 @@ function App() {
     
   }
 
-
-
-
-
   return (
     
     <div>
     <div>
       <ChartData allData={allData}/>
     </div>
+    <div><MyChartData allData={allData}/></div>
     <div>
       <SearchBar FilterSearch={FilterSearch}setSearch={setSearch} searchData={searchData}/>
     </div>
