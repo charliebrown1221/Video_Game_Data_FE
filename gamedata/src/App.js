@@ -51,7 +51,7 @@ function App() {
     <div>
       <MyChartData allData={allData}/></div>
     <div className='bar'>
-      <SearchBar FilterSearch={FilterSearch}setSearch={setSearch} searchData={searchData}/>
+      <SearchBar FilterSearch={FilterSearch}/>
     </div>
     {searchData.map((el)=>{
       return<> 

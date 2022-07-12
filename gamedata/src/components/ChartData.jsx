@@ -48,16 +48,17 @@ const ChartData = ({allData}) => {
     return ( 
         <div>
             <h1 className='text'>Platform By Global Sales In Millions </h1>
-        <Chart chartType="ColumnChart" width="100%" height="400px" options={options} data={getDataChart()} controls={[
-        {
-          controlType: "NumberRangeFilter",
-          options: {
-            filterColumnIndex: 1,
-            minValue: 0,
-            maxValue: 300000000,
-          },
-        },
-      ]}
+        <Chart chartType="ColumnChart" width="100%" height="400px" options={options} data={getDataChart()} 
+      //   controls={[
+      //   {
+      //     controlType: "NumberRangeFilter",
+      //     options: {
+      //       filterColumnIndex: 1,
+      //       minValue: 0,
+      //       maxValue: 300000000,
+      //     },
+      //   },
+      // ]}
     />
       </div>
      );

@@ -53,16 +53,17 @@ const MyChartData = ({allData}) => {
         
         <div >
         <h1 className='text'>Genre By Global Sales In Millions </h1>
-         <Chart  chartType="ColumnChart" width="100%" height="400px" options={options} data={getDataChartGenre()}controls={[
-        {
-          controlType: "NumberRangeFilter",
-          options: {
-            filterColumnIndex: 1,
-            minValue: 0,
-            maxValue: 300000000,
-          },
-        },
-      ]}
+         <Chart  chartType="ColumnChart" width="100%" height="400px" options={options} data={getDataChartGenre()}
+      //    controls={[
+      //   {
+      //     controlType: "NumberRangeFilter",
+      //     options: {
+      //       filterColumnIndex: 1,
+      //       minValue: 0,
+      //       maxValue: 300000000,
+      //     },
+      //   },
+      // ]}
     />
         </div>
 
