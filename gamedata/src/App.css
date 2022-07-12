@@ -11,19 +11,19 @@
   color: rgba(8, 8, 188, 0.746);
 }
 .bar{
-  padding-left: 100px;
+  padding-left: 200px;
   background-color: whitesmoke;
 }
 .name {
-  padding-left: 100px;background-color: whitesmoke;
+  padding-left: 200px;background-color: whitesmoke;
 }
 .platform {
-  padding-left: 100px;background-color: whitesmoke;
+  padding-left: 200px;background-color: whitesmoke;
 }
 .year {
-  padding-left: 100px;background-color: whitesmoke;
+  padding-left: 200px;background-color: whitesmoke;
 }
 .genre {
-  padding-left: 100px;background-color: whitesmoke;
+  padding-left: 200px;background-color: whitesmoke;
 }
 
