@@ -44,20 +44,22 @@ function App() {
 
   return (
     
-    <div>
+    <div  className='header'>
     <div>
       <ChartData allData={allData}/>
     </div>
-    <div><MyChartData allData={allData}/></div>
     <div>
+      <MyChartData allData={allData}/></div>
+    <div className='bar'>
       <SearchBar FilterSearch={FilterSearch}setSearch={setSearch} searchData={searchData}/>
     </div>
     {searchData.map((el)=>{
       return<> 
-      <div>Name: {el.name}  </div>
-      <div>Platform: {el.platform}</div>
-      <div>Year: {el.year}</div>
-      <div>Genre: {el.genre}</div>
+      <div className='name'>Name: {el.name}  </div>
+      <div className='platform'>Platform: {el.platform}</div>
+      <div className='year'>Year: {el.year}</div>
+      <div className='genre'>Genre: {el.genre}</div>
+      <hr></hr>
       </>
     })}
     </div>
